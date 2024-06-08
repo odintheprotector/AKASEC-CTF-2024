@@ -7,20 +7,26 @@ In this challenge, we will give a pcapng file, and we need to analyze it. First,
 
 As you can see right now in DNS packets, their query names is very weird, and each packet has a different name. This is the sign for DNS exfiltration and this is my solution: 
 - First, extract all DNS query names:
+
 ![image](https://github.com/odintheprotector/AKASEC-CTF-2024/assets/75618225/4475d2ac-79e6-48bd-a7f4-375b20247f77)
+
 - Second, filter these query names that contain "akasec.ma":
+
 ![image](https://github.com/odintheprotector/AKASEC-CTF-2024/assets/75618225/45263a8c-db04-4765-898c-e3906a922ee6)
+
 - Third, you can see that it has some duplicated strings, so you need to remove that string by using **uniq** command:
+  
 ![image](https://github.com/odintheprotector/AKASEC-CTF-2024/assets/75618225/8b030764-f25a-408b-98d8-f890b23122b8)
+
 - Fourth, remove "akasec.ma" also "\n" to ensure that there're just hex strings. I removed "akasec.ma" by my hand and write a Python script to remove "\n":
 
-```
-with open("C:\\Users\\Admin\\Downloads\\result4.txt", 'r') as file:
-    arr = file.read().split() 
-print(''.join(arr))
-```
+	```
+	with open("C:\\Users\\Admin\\Downloads\\result4.txt", 'r') as file:
+	    arr = file.read().split() 
+	print(''.join(arr))
+	```
 
-![image](https://github.com/odintheprotector/AKASEC-CTF-2024/assets/75618225/25a82fc7-6acc-4d22-a2b9-8e97258b5d84)
+	![image](https://github.com/odintheprotector/AKASEC-CTF-2024/assets/75618225/25a82fc7-6acc-4d22-a2b9-8e97258b5d84)
 
 Now you have everything, just decode it (you can use CyberChef or **xxd** command): 
 
