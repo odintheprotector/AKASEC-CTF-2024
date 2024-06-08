@@ -1,4 +1,4 @@
-![image](https://github.com/odintheprotector/AKASEC-CTF-2024/assets/75618225/369b5756-1ef2-43de-b11c-9fd6968c211b)Hi everyone, this time me and World Wide Flags have joined AKASEC CTF, and fortunately, I solved all forensic challenges there and this is writeup for them. Let's go!
+Hi everyone, this time me and World Wide Flags have joined AKASEC CTF, and fortunately, I solved all forensic challenges there and this is writeup for them. Let's go!
 
 ### Sussy
 In this challenge, we will give a pcapng file, and we need to analyze it. First, open it in Wireshark: 
